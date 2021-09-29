@@ -1,12 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+//Browser Router has HTML 5 HISTORY API with mehods to keep our app in sync with THE URL
+import { BrowserRouter as Router } from 'react-router-dom';
+import App from './pages/App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
+  // Strictmode looks for potential errors
   <React.StrictMode>
-    <App />
+    {/* Router we want to wrap around app so it could render componenet based on URL */}
+    <Router>
+      <App />
+      </Router>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
